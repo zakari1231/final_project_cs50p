@@ -17,6 +17,7 @@ import os
 # import os
 
 # insert the GTK3 Runtime folder at the beginning
+# install gtk from link: https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases
 GTK_FOLDER = r'C:\Program Files\GTK3-Runtime Win64\bin'
 os.environ['PATH'] = GTK_FOLDER + os.pathsep + os.environ.get('PATH', '')
 
