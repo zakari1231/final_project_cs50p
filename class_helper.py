@@ -9,6 +9,19 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import getpass
 
 from tabulate import tabulate
+from jinja2 import Environment, FileSystemLoader
+
+import os
+
+# os.add_dll_directory(r"C:\Program Files\GTK3-Runtime Win64\bin")
+# import os
+
+# insert the GTK3 Runtime folder at the beginning
+GTK_FOLDER = r'C:\Program Files\GTK3-Runtime Win64\bin'
+os.environ['PATH'] = GTK_FOLDER + os.pathsep + os.environ.get('PATH', '')
+
+from weasyprint import HTML, CSS
+
 
 
 
@@ -403,6 +416,47 @@ class Crud_db:
             except ValueError:
                 sys.exit('value Error')
 
+    def save_to_html(self):
+        env = Environment(loader=FileSystemLoader('templates'))
+        # 3. Load the template from the Environment
+        template = env.get_template('th_bill.html')
+
+        # retrive the last general bill and details bill
+        self.connect()
+        query_general_bill = ''' SELECT general_bill.id, general_bill.client_name , general_bill.total , general_bill.total_margin , general_bill.number_of_products , general_bill.date_g ,general_bill.time_g , users.username user_id 
+        FROM general_bill join users 
+        on general_bill.user_id = users.id
+        WHERE general_bill.id=(SELECT MAX(id) FROM general_bill) '''
+        self.cursor.execute(query_general_bill)
+        result_general_bill = self.cursor.fetchall()
+        print(result_general_bill)
+
+        #  retrive the detail bill 
+
+        query_details_bill = ''' SELECT product.product_name products, details_bill.number_of_products, details_bill.prix, details_bill.margin, details_bill.date, details_bill.time 
+        FROM details_bill join product
+        on product.id = products
+        WHERE details_bill.general_bill_id = (SELECT MAX(id) FROM general_bill)'''
+        self.cursor.execute(query_details_bill)
+        result_detail_bill = self.cursor.fetchall() 
+        print(result_detail_bill)
+
+        html = template.render(result_general = result_general_bill,
+                            result_detail_bill = result_detail_bill)
+
+        with open('html_report_jinja.html', 'w') as f:
+            f.write(html)
+
+        css = CSS(string='''
+            @page {size: A4; margin: 1cm;} 
+            th, td {border: 1px solid black;}
+            ''')
+        HTML('html_report_jinja.html').write_pdf('weasyprint_pdf_report.pdf', stylesheets=[css])
+
+
+        pass
+
+
 
 
 
@@ -419,7 +473,8 @@ db = Crud_db()
 # db.add_product()
 # db.calculat_total()
 
-db.save_to_csv()
+# db.save_to_csv()
+db.save_to_html()
 
 # db.print_product_table()
 # db.print_the_last_bill()
