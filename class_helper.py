@@ -165,7 +165,8 @@ class Crud_db:
         if self.check_if_login() == True:
             self.connect()
             date_f = str(datetime.date.today())
-            time_f = str(datetime.datetime.now().time())
+            # time_f = str(datetime.datetime.now().time())
+            time_f = str(datetime.datetime.now().time().strftime("%H:%M:%S"))
 
             # adding the client name and create a empty general bill that centaine only name of the client and id
 
@@ -208,7 +209,8 @@ class Crud_db:
         name = input('is this expense for some one? if yes type his name : ')
         montant = float(input('how much dose it cost: '))
         date_f = str(datetime.date.today())
-        time_f = str(datetime.datetime.now().time())
+        # time_f = str(datetime.datetime.now().time())
+        time_f = str(datetime.datetime.now().time().strftime("%H:%M:%S"))
         query_expenses = 'INSERT INTO expenses (type, nom, montant, date, temp) VALUES (?,?,?,?,?)'
         data_expenses = (type_expenses, name, montant, date_f, time_f)
         self.cursor.execute(query_expenses,data_expenses)
@@ -467,7 +469,7 @@ db = Crud_db()
 # check_if_user_login(db.check_if_login(), db.login())
 #db.chek_if_table_there()
 # db.insert_new_bill()
-# db.add_expenses()
+db.add_expenses()
 # db.signup()
 # db.login()
 # db.check_if_login()
@@ -475,7 +477,7 @@ db = Crud_db()
 # db.calculat_total()
 
 # db.save_to_csv()
-db.save_to_html()
+# db.save_to_html()
 
 # db.print_product_table()
 # db.print_the_last_bill()
