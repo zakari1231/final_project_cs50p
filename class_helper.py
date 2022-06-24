@@ -430,7 +430,7 @@ class Crud_db:
         WHERE general_bill.id=(SELECT MAX(id) FROM general_bill) '''
         self.cursor.execute(query_general_bill)
         result_general_bill = self.cursor.fetchall()
-        print(result_general_bill)
+        # print(result_general_bill)
 
         #  retrive the detail bill 
 
@@ -440,7 +440,7 @@ class Crud_db:
         WHERE details_bill.general_bill_id = (SELECT MAX(id) FROM general_bill)'''
         self.cursor.execute(query_details_bill)
         result_detail_bill = self.cursor.fetchall() 
-        print(result_detail_bill)
+        # print(result_detail_bill)
 
         html = template.render(result_general = result_general_bill,
                             result_detail_bill = result_detail_bill)
@@ -455,7 +455,7 @@ class Crud_db:
         HTML('html_report_jinja.html').write_pdf('weasyprint_pdf_report.pdf', stylesheets=[css])
 
 
-        pass
+        
 
 
 
