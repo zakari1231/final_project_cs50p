@@ -417,7 +417,7 @@ class Crud_db:
             except ValueError:
                 sys.exit('value Error')
 
-    def save_to_html(self):
+    def save_to_html_pdf(self):
         env = Environment(loader=FileSystemLoader('templates'))
         # 3. Load the template from the Environment
         template = env.get_template('th_bill.html')
