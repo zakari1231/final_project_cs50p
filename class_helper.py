@@ -188,6 +188,7 @@ class Crud_db:
                 question = input('do you wana add more product for this client (yes/no): ')
             else:
                 # after all the detail of this bill added calculat the sum 
+                # TODO add a check if id of product in database or not
                 query_3 = '''UPDATE general_bill 
                 SET total = (SELECT SUM(prix) FROM details_bill WHERE general_bill_id = (select max(id) from general_bill where client_name = ?) ), 
                 total_margin = (SELECT SUM(margin) FROM details_bill WHERE general_bill_id = (select max(id) from general_bill where client_name = ?) ),
