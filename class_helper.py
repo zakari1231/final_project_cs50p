@@ -252,6 +252,19 @@ class Crud_db:
             self.add_product()
         else:
             pass
+    
+    def check_if_there_is_products(self):
+        self.connect()
+        query_table = ''' SELECT id,product_name, prix, margin, product_descreption FROM product '''
+        self.cursor.execute(query_table)
+        result = self.cursor.fetchall()
+        if result:
+            self.print_product_table()
+        else:
+            print('you have to add products first')
+            self.add_product()
+        ...
+
 
     def signup(self):
         while True:
@@ -469,7 +482,7 @@ db = Crud_db()
 # check_if_user_login(db.check_if_login(), db.login())
 #db.chek_if_table_there()
 # db.insert_new_bill()
-db.add_expenses()
+# db.add_expenses()
 # db.signup()
 # db.login()
 # db.check_if_login()
@@ -477,7 +490,7 @@ db.add_expenses()
 # db.calculat_total()
 
 # db.save_to_csv()
-# db.save_to_html()
+# db.save_the_last_bill_to_html_pdf()
 
 # db.print_product_table()
 # db.print_the_last_bill()
