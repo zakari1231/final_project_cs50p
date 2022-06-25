@@ -61,7 +61,7 @@
 						
 						<td><span contenteditable>{{ product }}</span></td>
 						<td><span contenteditable>{{ number }}</span></td>
-						<td><span contenteditable>{{ total }}</span></td>
+						<td><span data-prefix>$</span><span>{{ {{ total }} }}</span></td>
 						<td><span data-prefix>$</span><span>{{ margin }}</span></td>
 					</tr>
 					{% endfor %}
