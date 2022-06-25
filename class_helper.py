@@ -163,6 +163,7 @@ class Crud_db:
     
     def insert_new_bill(self):
         if self.check_if_login() == True:
+            self.check_if_there_is_products()
             self.connect()
             date_f = str(datetime.date.today())
             # time_f = str(datetime.datetime.now().time())
@@ -481,7 +482,7 @@ db = Crud_db()
 # db.create_tables()
 # check_if_user_login(db.check_if_login(), db.login())
 #db.chek_if_table_there()
-# db.insert_new_bill()
+db.insert_new_bill()
 # db.add_expenses()
 # db.signup()
 # db.login()
