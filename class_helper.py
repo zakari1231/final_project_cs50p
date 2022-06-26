@@ -345,7 +345,17 @@ class Crud_db:
                 sys.exit('sorry you have to try another time')
                 
     def logout(self):
-        ...
+        if self.check_if_login() == False:
+            print('you have to login first in order to to be able to logout')
+        else:
+            self.connect()
+            new_date_time_logout = str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+            query_logout = ''' UPDATE login_or_not SET date_time_logout = ? WHERE date_time_logout = (SELECT MAX(date_time_logout) FROM login_or_not)'''
+            data_logout = (new_date_time_logout,)
+            self.cursor.execute(query_logout, data_logout)
+            self.close()
+            print('you are loggout successfully')
+
 
     def check_if_login(self):
         self.connect()
