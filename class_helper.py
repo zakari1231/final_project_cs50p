@@ -203,6 +203,12 @@ class Crud_db:
             print('you have to login first to be able to insert a bill')
             self.login()
             self.insert_new_bill()
+    
+    def update_bill(self):
+        ...
+
+    def delete_bill(self):
+        ...
 
     
     def add_expenses(self):
@@ -218,6 +224,12 @@ class Crud_db:
         self.cursor.execute(query_expenses,data_expenses)
         print('expense added to database seccesfully')
         self.close()
+    
+    def update_expenses(self):
+        ...
+    
+    def delete_expenses(self):
+        ...
 
     def calculat_total(self):
         self.connect()
@@ -331,6 +343,9 @@ class Crud_db:
                     print(f'you have only {atempts} Attempts')
             else:
                 sys.exit('sorry you have to try another time')
+                
+    def logout(self):
+        ...
 
     def check_if_login(self):
         self.connect()
