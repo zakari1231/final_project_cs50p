@@ -7,12 +7,16 @@ def main():
 
 def print_help():
     help_string = ''' 
-    this is a seller management systeme it allow the seller to register his products, and whene he buy somthing he
-    register this information in a database with the client name and the product that he buy and save it in some kind of
-    a bill for the client 
-     * to get help with this project you judt type help like this "python project.py help"
-     * to create a user user the following "python project.py sginup"
-     * if you have an account use the following "python project.py login"
+    this is a Seller Management Systeme that contain many featsers allow the seller track his revenue and expenses and register his products with the price and the margin, and register all of this informations in a database that allow to Create Read Update Delete all the information to manage his selling and expense.
+
+     -*- to get help with this project you judt type help like this "python project.py help"
+        that will show you all the command line allwoed in this project.
+
+     -*- to create a user user the following "python project.py sginup"
+        to crate a new user with a username and password, a password that is hashed that no one kan use your password
+        even if he ahve acces to the database.
+
+     -*- if you have an account use the following "python project.py login"
 
      '''
     return help_string
