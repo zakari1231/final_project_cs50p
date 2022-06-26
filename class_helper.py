@@ -363,7 +363,7 @@ class Crud_db:
                 return True
 
     def print_product_table(self):
-        """ this fucntion print the table of all product as a table in terminal for the user to chose the product befor adding to new bill, by selectin table products and return all product and use the liberery ****** and change this result into a table in the terminal """
+        """ this fucntion print the table of all product as a table in terminal for the user to chose the product befor adding to new bill, by selectin table products and return all product and use the liberery tabulate to change this result into a table in the terminal """
 
         self.connect()
         query_table = ''' SELECT id,product_name, prix, margin, product_descreption FROM product '''
