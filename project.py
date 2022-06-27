@@ -5,14 +5,17 @@ db = Crud_db()
 def main():
     print(print_help())
 
-def sginup():
+def sginup(): # python project.py sginup
     if db.check_if_login() == False:
         db.signup()
     else:
         print('you need to logout first\n use " python project.py logout "')
 
+def login(): # python project.py login
+    db.login()
 
-def print_help():
+
+def print_help(): # python project.py help
     # TODO fix the ortoghraph error
     help_string = ''' 
     this is a Seller Management Systeme that contain many featsers allow the seller track his revenue and expenses and
