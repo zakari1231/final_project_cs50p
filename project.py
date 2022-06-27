@@ -5,6 +5,13 @@ db = Crud_db()
 def main():
     print(print_help())
 
+def sginup():
+    if db.check_if_login() == False:
+        db.signup()
+    else:
+        print('you need to logout first\n use " python project.py logout "')
+
+
 def print_help():
     # TODO fix the ortoghraph error
     help_string = ''' 
