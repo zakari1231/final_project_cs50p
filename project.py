@@ -14,6 +14,9 @@ def sginup(): # python project.py sginup
 def login(): # python project.py login
     db.login()
 
+def logout() : # python project.py logout
+    db.logout()
+
 def add_products(): # python project.py add-products
     db.add_product()
 
@@ -37,7 +40,10 @@ def print_help(): # python project.py help
         even if he have acces to the database.
 
      -*- if you have an account use the following "python project.py login"
-        to login to your account and register every transaction with your username.
+        to login to your account and register every transaction with your username, it make you login for 3 hours and automaticlly logout.
+
+     -*- if you have an account use the following "python project.py logout"
+        to logout.
 
      -*- to create all table in the database use "python project.py create_tables"
         this commande create all the nesessairy table in the database.
