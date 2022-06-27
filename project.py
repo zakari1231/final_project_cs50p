@@ -20,6 +20,8 @@ def add_products():
 
 
 
+
+
 def print_help(): # python project.py help
     # TODO fix the ortoghraph error
     help_string = ''' 
@@ -39,6 +41,10 @@ def print_help(): # python project.py help
 
      -*- to create all table in the database use "python project.py create_tables"
         this commande create all the nesessairy table in the database.
+
+     -*- to add new products in the database use "python project.py add-products"
+        this commande will add a product name and the price , the margin of this products and if you want you can add a
+        descreption for this prodcuts 
 
      -*- to create new bill for a client use "python project.py create_new_bill"
         this command will create a new bill fro a client all you have to do is to enter the name of the client 
