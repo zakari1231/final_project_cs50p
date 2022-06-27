@@ -14,7 +14,7 @@ def sginup(): # python project.py sginup
 def login(): # python project.py login
     db.login()
 
-def add_products():
+def add_products(): # python project.py add-products
     db.add_product()
 
 
