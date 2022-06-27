@@ -14,6 +14,11 @@ def sginup(): # python project.py sginup
 def login(): # python project.py login
     db.login()
 
+def add_products():
+    db.add_product()
+
+
+
 
 def print_help(): # python project.py help
     # TODO fix the ortoghraph error
