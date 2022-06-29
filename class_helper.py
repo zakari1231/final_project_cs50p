@@ -182,8 +182,11 @@ class Crud_db:
                 product = input('product id: ')
                 number_of_product = input('number of product: ')
 
+                date_f2 = str(datetime.date.today())
+                time_f2 = str(datetime.datetime.now().time().strftime("%H:%M:%S"))
+
                 query2 = 'INSERT INTO details_bill (products, number_of_products, prix, margin, date,time, general_bill_id) VALUES (?,?,?*(select prix from product where id =?),?*(select margin from product where id =?),?,?,(select max(id) from general_bill where client_name = ?))'
-                data_query_2 = (product, number_of_product, number_of_product, product, number_of_product, product, date_f, time_f, client_name)
+                data_query_2 = (product, number_of_product, number_of_product, product, number_of_product, product, date_f2, time_f2, client_name)
                 self.cursor.execute(query2,data_query_2)
                 question = input('do you wana add more product for this client (yes/no): ')
             else:
@@ -205,7 +208,47 @@ class Crud_db:
             self.insert_new_bill()
     
     def update_bill(self):
-        ...
+        date_input = input('do you wana see the bills for this day or for a specific date, if you want for a specific date please entre your date in a format " %Y-%m-%d ": ')
+        if date_input == None or date_input == '':
+            self.print_general_bill()
+        else:
+            self.print_general_bill(date_input)
+        the_id = input('please choose the id of the bill you want to change: ')
+        self.print_the_last_bill(the_id)
+        self.connect()
+        delete_query = ''' DELETE FROM  details_bill WHERE general_bill_id = ?'''
+        id_data = (the_id,)
+        self.cursor.execute(delete_query,id_data)
+        # self.close()
+
+        print(f'Now please update the detail for the bill with the id = {the_id}')
+        question = 'yes'
+        while question == 'yes':
+            product = input('product id: ')
+            number_of_product = input('number of product: ')
+
+            date_f = str(datetime.date.today())
+            time_f = str(datetime.datetime.now().time().strftime("%H:%M:%S"))
+
+            query2 = 'INSERT INTO details_bill (products, number_of_products, prix, margin, date,time, general_bill_id) VALUES (?,?,?*(select prix from product where id =?),?*(select margin from product where id =?),?,?,?)'
+            data_query_2 = (product, number_of_product, number_of_product, product, number_of_product, product, date_f, time_f, the_id)
+            self.cursor.execute(query2,data_query_2)
+            question = input('do you wana add more product for this client (yes/no): ')
+        else:
+            # after all the detail of this bill added calculat the sum 
+            # TODO add a check if id of product in database or not
+            query_3 = '''UPDATE general_bill 
+            SET total = (SELECT SUM(prix) FROM details_bill WHERE general_bill_id = ?), 
+            total_margin = (SELECT SUM(margin) FROM details_bill WHERE general_bill_id = ? ),
+            number_of_products = (SELECT SUM(number_of_products) FROM details_bill WHERE general_bill_id = ? ) 
+            WHERE id = ?'''
+            data_query_3 = (the_id,the_id, the_id, the_id)
+            self.cursor.execute(query_3,data_query_3) 
+            self.close()
+            self.print_the_last_bill(the_id)
+
+
+
 
     def delete_bill(self):
         ...
@@ -390,7 +433,7 @@ class Crud_db:
                 FROM general_bill join users 
                 on general_bill.user_id = users.id
                 WHERE general_bill.date_g= ? '''
-            date_data = (date_n)
+            date_data = (date_n,)
             self.cursor.execute(query_general_bill, date_data)
             tabel_generalbill_headers = ['id','client name', 'total', 'total_marigin', 'number of product', 'date','time', 'user']
             result = self.cursor.fetchall()     
@@ -566,6 +609,7 @@ db = Crud_db()
 # db.check_if_login()
 # db.add_product()
 # db.calculat_total()
+db.update_bill()
 
 # db.save_to_csv()
 # db.save_the_last_bill_to_html_pdf()
