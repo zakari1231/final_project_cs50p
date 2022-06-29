@@ -202,6 +202,7 @@ class Crud_db:
                 print(f'all product that |{client_name}| buy added to database seccesfully')
                 self.close()
                 self.print_the_last_bill()
+            self.calculat_total()
         else:
             print('you have to login first to be able to insert a bill')
             self.login()
@@ -246,6 +247,7 @@ class Crud_db:
             self.cursor.execute(query_3,data_query_3) 
             self.close()
             self.print_the_last_bill(the_id)
+        self.calculat_total()
 
 
     def delete_bill(self, id = None):
@@ -262,6 +264,7 @@ class Crud_db:
         self.cursor.execute(query_delete_general_bill, data_id)
         self.close()
         print(f'bill with the id = {the_id} has been deleted successfully')
+        self.calculat_total()
 
     
     def add_expenses(self):
@@ -277,6 +280,7 @@ class Crud_db:
         self.cursor.execute(query_expenses,data_expenses)
         print('expense added to database seccesfully')
         self.close()
+        self.calculat_total()
     
     def update_expenses(self):
         ...
