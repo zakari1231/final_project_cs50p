@@ -467,7 +467,6 @@ class Crud_db:
             print(tabulate(result, headers=tabel_generalbill_headers, tablefmt="psql"))
 
 
-
     def print_the_last_bill(self, id = None):
         if id == None:
             self.connect()
@@ -517,6 +516,20 @@ class Crud_db:
         self.cursor.execute(query_expences)
         result_expences = self.cursor.fetchall() 
         print(tabulate(result_expences, headers=headers_expences, tablefmt="psql")) #for another table user tablefmt="grid"
+
+    def print_expences_for_day(self, day = None):
+        if day == None:
+            the_date = str(datetime.date.today())
+        else:
+            the_date = input('please entre your date in a format " %Y-%m-%d ": ')
+        self.connect()
+        query_expences = ''' SELECT * FROM expences WHERE date = ?'''
+        data_date = (the_date,)
+        self.cursor.execute(query_expences, data_date)
+        result = self.cursor.fetchall() 
+        headers_expences = ['id', 'type', 'name', 'montant', 'date','time']
+        print(tabulate(result, headers=headers_expences, tablefmt="psql")) #for another table user tablefmt="grid"
+        pass
 
     def print_total_jr(self, day = None):
         query_total = ''' SELECT * FROM total WHERE date = (SELECT MAX(date) FROM total) '''
