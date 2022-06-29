@@ -383,17 +383,32 @@ class Crud_db:
         print(tabulate(result, headers=table_headers, tablefmt="psql")) #for another table user tablefmt="grid"
     
     def print_general_bill(self, day = None):
-        self.connect()
-        date_n = str(datetime.date.today())
-        query_general_bill = ''' SELECT general_bill.id, general_bill.client_name , general_bill.total , general_bill.total_margin , general_bill.number_of_products , general_bill.date_g ,general_bill.time_g , users.username user_id 
-            FROM general_bill join users 
-            on general_bill.user_id = users.id
-            WHERE general_bill.date_g= ? '''
-        date_data = (date_n)
-        self.cursor.execute(query_general_bill, date_data)
-        tabel_generalbill_headers = ['id','client name', 'total', 'total_marigin', 'number of product', 'date','time', 'user']
-        result = self.cursor.fetchall()     
-        print(tabulate(result, headers=tabel_generalbill_headers, tablefmt="psql"))
+        if day == None:
+            self.connect()
+            date_n = str(datetime.date.today())
+            query_general_bill = ''' SELECT general_bill.id, general_bill.client_name , general_bill.total , general_bill.total_margin , general_bill.number_of_products , general_bill.date_g ,general_bill.time_g , users.username user_id 
+                FROM general_bill join users 
+                on general_bill.user_id = users.id
+                WHERE general_bill.date_g= ? '''
+            date_data = (date_n)
+            self.cursor.execute(query_general_bill, date_data)
+            tabel_generalbill_headers = ['id','client name', 'total', 'total_marigin', 'number of product', 'date','time', 'user']
+            result = self.cursor.fetchall()     
+            print(tabulate(result, headers=tabel_generalbill_headers, tablefmt="psql"))
+        if day:
+            self.connect()
+            # date_n = str(datetime.date.today())
+            the_date = str(day.strftime("%Y-%m-%d"))
+            query_general_bill = ''' SELECT general_bill.id, general_bill.client_name , general_bill.total , general_bill.total_margin , general_bill.number_of_products , general_bill.date_g ,general_bill.time_g , users.username user_id 
+                FROM general_bill join users 
+                on general_bill.user_id = users.id
+                WHERE general_bill.date_g= ? '''
+            date_data = (the_date)
+            self.cursor.execute(query_general_bill, date_data)
+            tabel_generalbill_headers = ['id','client name', 'total', 'total_marigin', 'number of product', 'date','time', 'user']
+            result = self.cursor.fetchall()     
+            print(tabulate(result, headers=tabel_generalbill_headers, tablefmt="psql"))
+
 
 
     def print_the_last_bill(self, id = None):
