@@ -396,8 +396,6 @@ class Crud_db:
         print(tabulate(result, headers=tabel_generalbill_headers, tablefmt="psql"))
 
 
-        pass
-
     def print_the_last_bill(self, id = None):
         if id == None:
             self.connect()
@@ -424,7 +422,8 @@ class Crud_db:
             FROM general_bill join users 
             on general_bill.user_id = users.id
             WHERE general_bill.id= ? '''
-            self.cursor.execute(query_general_bill,id)
+            data_id = (id,)
+            self.cursor.execute(query_general_bill,data_id)
             tabel_generalbill_headers = ['id','client name', 'total', 'total_marigin', 'number of product', 'date','time', 'user'] 
             result = self.cursor.fetchall()     
             print(tabulate(result, headers=tabel_generalbill_headers, tablefmt="psql")) #for another table user tablefmt="grid"
@@ -434,7 +433,7 @@ class Crud_db:
             on product.id = products
             WHERE details_bill.general_bill_id = ?'''
             headers_detail_bill = ['product name', 'number of products', 'price', 'margin', 'date', 'time']
-            self.cursor.execute(query_details_bill,id)
+            self.cursor.execute(query_details_bill,data_id)
             result_detail_bill = self.cursor.fetchall() 
             print(tabulate(result_detail_bill, headers=headers_detail_bill, tablefmt="psql")) #for another table user tablefmt="grid"
 
