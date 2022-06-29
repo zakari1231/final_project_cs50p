@@ -383,25 +383,46 @@ class Crud_db:
         print(tabulate(result, headers=table_headers, tablefmt="psql")) #for another table user tablefmt="grid"
 
 
-    def print_the_last_bill(self):
-        self.connect()
-        query_general_bill = ''' SELECT general_bill.id, general_bill.client_name , general_bill.total , general_bill.total_margin , general_bill.number_of_products , general_bill.date_g ,general_bill.time_g , users.username user_id 
-        FROM general_bill join users 
-        on general_bill.user_id = users.id
-        WHERE general_bill.id=(SELECT MAX(id) FROM general_bill) '''
-        self.cursor.execute(query_general_bill)
-        tabel_generalbill_headers = ['id','client name', 'total', 'total_marigin', 'number of product', 'date','time', 'user'] 
-        result = self.cursor.fetchall()     
-        print(tabulate(result, headers=tabel_generalbill_headers, tablefmt="psql")) #for another table user tablefmt="grid"
+    def print_the_last_bill(self, id = None):
+        if id == None:
+            self.connect()
+            query_general_bill = ''' SELECT general_bill.id, general_bill.client_name , general_bill.total , general_bill.total_margin , general_bill.number_of_products , general_bill.date_g ,general_bill.time_g , users.username user_id 
+            FROM general_bill join users 
+            on general_bill.user_id = users.id
+            WHERE general_bill.id=(SELECT MAX(id) FROM general_bill) '''
+            self.cursor.execute(query_general_bill)
+            tabel_generalbill_headers = ['id','client name', 'total', 'total_marigin', 'number of product', 'date','time', 'user'] 
+            result = self.cursor.fetchall()     
+            print(tabulate(result, headers=tabel_generalbill_headers, tablefmt="psql")) #for another table user tablefmt="grid"
 
-        query_details_bill = ''' SELECT product.product_name products, details_bill.number_of_products, details_bill.prix, details_bill.margin, details_bill.date, details_bill.time 
-        FROM details_bill join product
-        on product.id = products
-        WHERE details_bill.general_bill_id = (SELECT MAX(id) FROM general_bill)'''
-        headers_detail_bill = ['product name', 'number of products', 'price', 'margin', 'date', 'time']
-        self.cursor.execute(query_details_bill)
-        result_detail_bill = self.cursor.fetchall() 
-        print(tabulate(result_detail_bill, headers=headers_detail_bill, tablefmt="psql")) #for another table user tablefmt="grid"
+            query_details_bill = ''' SELECT product.product_name products, details_bill.number_of_products, details_bill.prix, details_bill.margin, details_bill.date, details_bill.time 
+            FROM details_bill join product
+            on product.id = products
+            WHERE details_bill.general_bill_id = (SELECT MAX(id) FROM general_bill)'''
+            headers_detail_bill = ['product name', 'number of products', 'price', 'margin', 'date', 'time']
+            self.cursor.execute(query_details_bill)
+            result_detail_bill = self.cursor.fetchall() 
+            print(tabulate(result_detail_bill, headers=headers_detail_bill, tablefmt="psql")) #for another table user tablefmt="grid"
+        if id:
+            self.connect()
+            query_general_bill = ''' SELECT general_bill.id, general_bill.client_name , general_bill.total , general_bill.total_margin , general_bill.number_of_products , general_bill.date_g ,general_bill.time_g , users.username user_id 
+            FROM general_bill join users 
+            on general_bill.user_id = users.id
+            WHERE general_bill.id= ? '''
+            self.cursor.execute(query_general_bill,id)
+            tabel_generalbill_headers = ['id','client name', 'total', 'total_marigin', 'number of product', 'date','time', 'user'] 
+            result = self.cursor.fetchall()     
+            print(tabulate(result, headers=tabel_generalbill_headers, tablefmt="psql")) #for another table user tablefmt="grid"
+
+            query_details_bill = ''' SELECT product.product_name products, details_bill.number_of_products, details_bill.prix, details_bill.margin, details_bill.date, details_bill.time 
+            FROM details_bill join product
+            on product.id = products
+            WHERE details_bill.general_bill_id = ?'''
+            headers_detail_bill = ['product name', 'number of products', 'price', 'margin', 'date', 'time']
+            self.cursor.execute(query_details_bill,id)
+            result_detail_bill = self.cursor.fetchall() 
+            print(tabulate(result_detail_bill, headers=headers_detail_bill, tablefmt="psql")) #for another table user tablefmt="grid"
+
 
     def print_last_expences(self):
         self.connect()
