@@ -248,10 +248,20 @@ class Crud_db:
             self.print_the_last_bill(the_id)
 
 
-
-
-    def delete_bill(self):
-        ...
+    def delete_bill(self, id = None):
+        if id:
+            the_id = id
+        else:
+            the_id = input('please enter the id of the bill you want to delete: ')
+        
+        self.connect()
+        data_id = (the_id,)
+        query_delete_detail_bill = ''' DELETE FROM details_bill WHERE general_bill_id = ?'''
+        query_delete_general_bill = ''' DELETE FROM  general_bill WHERE id = ?'''
+        self.cursor.execute(query_delete_detail_bill, data_id)
+        self.cursor.execute(query_delete_general_bill, data_id)
+        self.close()
+        print(f'bill with the id = {the_id} has been deleted successfully')
 
     
     def add_expenses(self):
