@@ -27,7 +27,8 @@ def update_bill(): # python project update_bill
     db.update_bill()
 
 
-
+def delete_bill(): # python project.py delete_bill
+    db.delete_bill()
 
 
 def print_help(): # python project.py help
@@ -63,7 +64,10 @@ def print_help(): # python project.py help
         continue entering what he buy.
 
      -*- to update a bill use "python project.py update_bill"
-         after choosing the bill that you want to update re enter the new products and the bill will be updated 
+        after choosing the bill that you want to update re enter the new products and the bill will be updated 
+    
+     -*- to delet a bill use "python project.py delete_bill"
+        this commande will delete the bill from the general bill and detail bill tables
 
      -*- to create a pdf bill for this client use " python project.py create_pdf_bill"
         this command will create a pdf file and an html file for the last bill you created. 
