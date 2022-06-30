@@ -509,11 +509,16 @@ class Crud_db:
             print(tabulate(result_detail_bill, headers=headers_detail_bill, tablefmt="psql")) #for another table user tablefmt="grid"
 
 
-    def print_last_expences(self):
+    def print_last_expences(self, id = None):
         self.connect()
-        query_expences = ''' SELECT * FROM expences WHERE id = (SELECT MAX(id) FROM expences)'''
+        if id == None:
+            query_expences = ''' SELECT * FROM expences WHERE id = (SELECT MAX(id) FROM expences)'''
+            self.cursor.execute(query_expences)
+        else :
+            query_expences = ''' SELECT * FROM expences WHERE id = ?'''
+            data_id = (id,)
+            self.cursor.execute(query_expences, data_id)
         headers_expences = ['id', 'type', 'name', 'montant', 'date','time']
-        self.cursor.execute(query_expences)
         result_expences = self.cursor.fetchall() 
         print(tabulate(result_expences, headers=headers_expences, tablefmt="psql")) #for another table user tablefmt="grid"
 
