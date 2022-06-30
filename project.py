@@ -20,6 +20,11 @@ def logout() : # python project.py logout
 def add_products(): # python project.py add-products
     db.add_product()
 
+def add_bill(): # python project create_new_bill
+   db.insert_new_bill()
+
+def update_bill(): # python project update_bill
+    db.update_bill()
 
 
 
@@ -56,6 +61,9 @@ def print_help(): # python project.py help
         this command will create a new bill fro a client all you have to do is to enter the name of the client 
         and the id of the product he buy the number of this product, after that if he buy other product just type yes and
         continue entering what he buy.
+
+     -*- to update a bill use "python project.py update_bill"
+         after choosing the bill that you want to update re enter the new products and the bill will be updated 
 
      -*- to create a pdf bill for this client use " python project.py create_pdf_bill"
         this command will create a pdf file and an html file for the last bill you created. 
