@@ -30,6 +30,9 @@ def update_bill(): # python project update_bill
 def delete_bill(): # python project.py delete_bill
     db.delete_bill()
 
+def add_expence(): # python project.py add_expence
+    db.add_expenses()
+
 
 def print_help(): # python project.py help
     # TODO fix the ortoghraph error
@@ -66,8 +69,12 @@ def print_help(): # python project.py help
      -*- to update a bill use "python project.py update_bill"
         after choosing the bill that you want to update re enter the new products and the bill will be updated 
     
-     -*- to delet a bill use "python project.py delete_bill"
+     -*- to delete a bill use "python project.py delete_bill"
         this commande will delete the bill from the general bill and detail bill tables
+
+     -*- to add a new expences use "python project.py add_expence"
+        this commande will add a new expence to the database you can add the type of the expences and if it is for somme
+        one you can add his name and the ammount of this expenece
 
      -*- to create a pdf bill for this client use " python project.py create_pdf_bill"
         this command will create a pdf file and an html file for the last bill you created. 
