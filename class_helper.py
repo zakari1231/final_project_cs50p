@@ -677,7 +677,7 @@ db = Crud_db()
 # db.check_if_login()
 # db.add_product()
 # db.calculat_total()
-db.update_bill()
+# db.update_bill()
 
 # db.save_to_csv()
 # db.save_the_last_bill_to_html_pdf()
