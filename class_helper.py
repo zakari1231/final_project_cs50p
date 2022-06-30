@@ -503,6 +503,7 @@ class Crud_db:
 
 
     def print_the_last_bill(self, id = None):
+        # TODO make this fucntion work but less lines
         if id == None:
             self.connect()
             query_general_bill = ''' SELECT general_bill.id, general_bill.client_name , general_bill.total , general_bill.total_margin , general_bill.number_of_products , general_bill.date_g ,general_bill.time_g , users.username user_id 
