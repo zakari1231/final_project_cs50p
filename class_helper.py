@@ -318,9 +318,13 @@ class Crud_db:
         self.calculat_total()
     
 
-    def calculat_total(self):
+    def calculat_total(self, day = None):
         self.connect()
-        date_f = str(datetime.date.today())
+        if day == None or day == '':
+            date_f = str(datetime.date.today())
+        else:
+            date_f = day
+            
         first_query = 'INSERT INTO total (date) VALUES (?) ON CONFLICT (date) DO NOTHING'
         data_total_1 = (date_f,)
         self.cursor.execute(first_query, data_total_1)
