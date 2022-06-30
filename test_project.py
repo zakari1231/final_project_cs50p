@@ -7,7 +7,7 @@ db = Crud_db()
 
 
 
-def test_tables():
+def test_exist_tables():
     db.connect()
     query = """ SELECT name FROM sqlite_master WHERE type='table' """
     db.execute(query)
@@ -16,7 +16,4 @@ def test_tables():
     # print(result)
     
     assert len(result) == 8
-
-
-
 
