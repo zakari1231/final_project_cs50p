@@ -40,6 +40,10 @@ def update_expenses(): # python project update_expenses
 def delete_expenses(): # python project.py delete_expenses
     db.delete_expenses()
 
+def print_total_jr(day = None): # python project.py print_total_jr day
+    db.print_total_jr(day)
+
+
 
 def print_help(): # python project.py help
     # TODO fix the ortoghraph error
@@ -88,6 +92,11 @@ def print_help(): # python project.py help
     
      -*- to delete a expences use "python project.py delete_expenses"
         this commande will delete the expenses from expnences tables
+
+     -*- to print the total revenue and expences use " python project.py print_total_jr"
+        this commande will print a table in the terminal window with the total revenue and total expences and the 
+        deferance, if you want to print a total table for a specefec date add the day in a format "%Y-%m-%d" after 
+        "python project.py print_total_jr"
 
      -*- to create a pdf bill for this client use " python project.py create_pdf_bill"
         this command will create a pdf file and an html file for the last bill you created. 
