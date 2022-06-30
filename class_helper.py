@@ -283,8 +283,27 @@ class Crud_db:
         self.calculat_total()
     
     def update_expenses(self):
-        ...
-    
+        the_day = input('if you want to update an expence in a specific date please enter the date in a format " %Y-%m-%d ": ')
+        if the_day == None or the_day == '':
+            self.print_expences_for_day()
+        else:
+            self.print_expences_for_day(the_day)
+
+        the_expence_id = input('please choose the id of the expence you want to change: ')
+        self.print_last_expences(the_expence_id)
+        self.connect()
+        type_expenses = input('enter the type of the expense: ')
+        name = input('is this expense for some one? if yes type his name : ')
+        montant = float(input('how much dose it cost: '))
+        query_update_expence = ''' UPDATE expenses SET type=?, name=?, montant=? WHERE id=? '''
+        data = (type_expenses, name, montant, the_expence_id)
+        self.cursor.execute(query_update_expence,data)
+        self.close()
+        print(f'expence with the id = {the_expence_id} has been updated successfully')
+        self.print_last_expences(the_expence_id)
+        self.calculat_total()
+
+
     def delete_expenses(self):
         ...
 
