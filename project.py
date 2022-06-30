@@ -48,7 +48,7 @@ def print_help(): # python project.py help
      -*- to create all table in the database use "python project.py create_tables"
         this commande create all the nesessairy table in the database.
 
-     -*- to add new products in the database use "python project.py add-products"
+     -*- to add new products in the database use "python project.py add_products"
         this commande will add a product name and the price , the margin of this products and if you want you can add a
         descreption for this prodcuts 
 
