@@ -304,8 +304,19 @@ class Crud_db:
         self.calculat_total()
 
 
-    def delete_expenses(self):
-        ...
+    def delete_expenses(self, id = None):
+        if id:
+            the_id = id
+        else:
+            the_id = input('please enter the id of the expence you want to delete: ')
+        
+        query_delete_expence = ''' DELETE FROM expenses WHERE id = ? '''
+        data_id = (the_id,)
+        self.cursor.execute(query_delete_expence, data_id)
+        self.close()
+        print(f'expenses with the id = {the_id} has been deleted successfully')
+        self.calculat_total()
+    
 
     def calculat_total(self):
         self.connect()
