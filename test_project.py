@@ -3,8 +3,11 @@ import sqlite3
 import time, datetime
 from datetime import timedelta
 # from prefect.tasks.database.sqlite import SQLiteQuery
+from pathlib import Path
+import os
 
 from class_helper import Crud_db
+
 
 db = Crud_db() 
 
@@ -32,6 +35,27 @@ def test_login_logout():
         assert db.check_if_login() == False
     else:
         assert db.check_if_login() == True
+
+def check_if_file_created():
+    # db.save_the_last_bill_to_html_pdf()
+    filename = Path('weasyprint_pdf_report.pdf')
+    # save_pdf = db.save_the_last_bill_to_html_pdf() 
+    # assert db.save_the_last_bill_to_html_pdf() == 'pdf file and html file created successfully'
+    # assert db.save_the_last_bill_to_html_pdf() == os.path.exists(filename) 
+    assert os.path.exists(filename) ==1
+    # assert os.path.isfile(filename)
+
+
+
+# check_if_file_created()
+# #using pathlib
+# from pathlib import Path
+
+# file_name = Path("file.txt")
+# if file_name.exists():
+#     print("exists") 
+# else:
+#     print("does not exist") 
 
 
 # # import writer

@@ -656,6 +656,7 @@ class Crud_db:
             th, td {border: 1px solid black;}
             ''')
         HTML('html_report_jinja.html').write_pdf('weasyprint_pdf_report.pdf', stylesheets=[css])
+        print('pdf file and html file created successfully')
 
 
         
