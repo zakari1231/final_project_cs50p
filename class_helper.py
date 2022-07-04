@@ -3,6 +3,7 @@ import pandas as pd
 import sys
 import time, datetime
 from datetime import timedelta
+import os
 # from decorator import check_if_user_login
 
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -658,6 +659,12 @@ class Crud_db:
         HTML('html_report_jinja.html').write_pdf('weasyprint_pdf_report.pdf', stylesheets=[css])
         print('pdf file and html file created successfully')
 
+        if os.path.exists("html_report_jinja.html"):
+            os.remove("html_report_jinja.html")
+            print("The file has been deleted successfully")
+        else:
+            print("The file does not exist!")
+
 
         
 
@@ -681,7 +688,7 @@ db = Crud_db()
 # db.update_bill()
 
 # db.save_to_csv()
-# db.save_the_last_bill_to_html_pdf()
+db.save_the_last_bill_to_html_pdf()
 
 # db.print_product_table()
 # db.print_the_last_bill()
