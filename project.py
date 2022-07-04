@@ -45,7 +45,7 @@ def print_total_jr(day = None): # python project.py print_total_jr day
 
 def save_to_csv(day = None): #python project.py save_to_csv
     db.save_to_csv(day)
-    pass
+    
 
 
 
