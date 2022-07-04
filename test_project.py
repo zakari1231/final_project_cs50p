@@ -36,18 +36,27 @@ def test_login_logout():
     else:
         assert db.check_if_login() == True
 
-def check_if_file_created():
-    # db.save_the_last_bill_to_html_pdf()
+def check_if_pdf_file():
+    savepdf = db.save_the_last_bill_to_html_pdf()
+    # savepdf
     filename = Path('weasyprint_pdf_report.pdf')
+    # os.path.exists(filename)    
+    assert os.path.exists(filename) == True
+    assert savepdf == 'pdf file and html file created successfully'
+
+# def check_if_file_created():
+#     assert db.save_the_last_bill_to_html_pdf() == 1
+    # db.save_the_last_bill_to_html_pdf()
+    # filename = Path('weasyprint_pdf_report.pdf')
     # save_pdf = db.save_the_last_bill_to_html_pdf() 
-    # assert db.save_the_last_bill_to_html_pdf() == 'pdf file and html file created successfully'
-    # assert db.save_the_last_bill_to_html_pdf() == os.path.exists(filename) 
-    assert os.path.exists(filename) ==1
+    # # assert db.save_the_last_bill_to_html_pdf() == 'pdf file and html file created successfully'
+    # # assert db.save_the_last_bill_to_html_pdf() == os.path.exists(filename) 
+    # assert db.save_the_last_bill_to_html_pdf() == 1
     # assert os.path.isfile(filename)
 
 
 
-# check_if_file_created()
+check_if_pdf_file()
 # #using pathlib
 # from pathlib import Path
 
