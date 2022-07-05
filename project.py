@@ -1,9 +1,12 @@
+import sys
 from class_helper import Crud_db
 
 db = Crud_db()
 
 def main():
     print(print_help())
+    if len(sys.argv) == 1:
+        print(print_help())
 
 def sginup(): # python project.py sginup
     if db.check_if_login() == False:
