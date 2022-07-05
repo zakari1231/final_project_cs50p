@@ -30,7 +30,8 @@ this query create a table for the users, with taht every user have an id, userna
 
 ## Products
 
-after adding somme products you can see them in a form of a table in terminal window like this 
+after adding somme products you can see them in a form of a table in terminal window like this.
+
 ![Products](/screenshots/1.png) 
 
 ## bill
@@ -53,6 +54,8 @@ you can save 3 csv file of the income and expences and the total of any day and 
 ## save the last bill to a pdf file
 you can also save the last bill to a pdf file like this 
 ![save the last bill to a pdf file](/screenshots/5.png)
+
+# how to use this project
 
 to run this project first you need to install all the requirements using 
 ```
