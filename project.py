@@ -1,12 +1,69 @@
 import sys
+
+from attr import s
 from class_helper import Crud_db
 
 db = Crud_db()
 
 def main():
-    print(print_help())
+    # print(print_help())
     if len(sys.argv) == 1:
         print(print_help())
+    elif len(sys.argv) == 2 or len(sys.argv) == 3:
+        if sys.argv[1] == 'help' or sys.argv[1] == 'h' or sys.argv[1] == 'H':
+            print(print_help())
+
+        elif sys.argv[1]=='sginup':
+            sginup()
+
+        elif sys.argv[1]=='login':
+            login()
+
+        elif sys.argv[1]=='lgout':
+            logout()
+
+        elif sys.argv[1]=='add_products':
+            add_products()
+
+        elif sys.argv[1]=='create_new_bill':
+            add_bill()
+
+        elif sys.argv[1]=='update_bill':
+            update_bill()
+
+        elif sys.argv[1]=='delete_bill':
+            delete_bill()
+
+        elif sys.argv[1]=='add_expence':
+            add_expence()
+
+        elif sys.argv[1]=='update_expenses':
+            update_expenses()
+
+        elif sys.argv[1]=='delete_expenses':
+            delete_expenses()
+
+        elif sys.argv[1]=='print_total_jr':
+            if sys.argv[2]==None or sys.argv[2]=='':
+                print_total_jr()
+            if sys.argv[2]:
+                print_total_jr(sys.argv[2])
+
+        elif sys.argv[1]== 'save_to_csv':
+            if sys.argv[2]==None or sys.argv[2]=='':
+                save_to_csv()
+            if sys.argv[2]:
+                save_to_csv(sys.argv[2])
+        
+        elif sys.argv[1]=='create_pdf_bill':
+            save_to_pdf()
+        
+        else:
+            print(print_help())
+            
+    else:
+        print('no such command arguments try python project.py help')
+        # print(print_help())
 
 def sginup(): # python project.py sginup
     if db.check_if_login() == False:
@@ -20,7 +77,7 @@ def login(): # python project.py login
 def logout() : # python project.py logout
     db.logout()
 
-def add_products(): # python project.py add-products
+def add_products(): # python project.py add_products
     db.add_product()
 
 def add_bill(): # python project create_new_bill
@@ -46,7 +103,7 @@ def delete_expenses(): # python project.py delete_expenses
 def print_total_jr(day = None): # python project.py print_total_jr day
     db.print_total_jr(day)
 
-def save_to_csv(day = None): #python project.py save_to_csv
+def save_to_csv(day = None): #python project.py save_to_csv day
     db.save_to_csv(day)
 
 def save_to_pdf(): # python project.py create_pdf_bill
