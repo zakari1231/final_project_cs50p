@@ -9,12 +9,12 @@ This is a Seller Management Systeme that contains many features that allow the s
 * in this project we create a class that deal with all the thing nessecairy to make a CRUD application(Create, Read, Update and Delete), 
 
 we use a few laberey in this project that help facilite and not reenvente the weell like:
-. `sqlite3` allows accessing the database using a nonstandard variant of the SQL query language.
-. `datetime` that help get the date and time in any format we want and also make it easy to handel the manipulation in time or date.
-. `getpass` labreery that help to hide the passwrod whene the user want to login or sginup.
-. `werkzeug` labrery that help encrypte the password.
-. `jinja2` that helpt create html pages and `weasyprint` convert that html page into pdf file.
-. `tabulate` that print tables 
+- `sqlite3` allows accessing the database using a nonstandard variant of the SQL query language.
+- `datetime` that help get the date and time in any format we want and also make it easy to handel the manipulation in time or date.
+- `getpass` labreery that help to hide the passwrod whene the user want to login or sginup.
+- `werkzeug` labrery that help encrypte the password.
+- `jinja2` that helpt create html pages and `weasyprint` convert that html page into pdf file.
+- `tabulate` that print tables 
 
 this class initially create a database in a sqlite and have a methode to connect to that database and to execute query, 
 we create all the table nessecaery for this project using sql query for exemple:
