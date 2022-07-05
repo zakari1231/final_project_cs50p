@@ -54,7 +54,12 @@ you can save 3 csv file of the income and expences and the total of any day and 
 you can also save the last bill to a pdf file like this 
 ![save the last bill to a pdf file](/screenshots/5.png)
 
-to run th
+to run this project first you need to install all the requirements using 
+```
+pip install -r requirements.txt
+```
+
+and then use one of this command 
 
 #### `python project.py help`
 To get help with this project you just type help, that will show you all the command line allowed in this project.
@@ -101,3 +106,7 @@ This command will create a pdf file and an html file for the last bill you creat
 #### ` python project.py save_to_csv `
 this command will create a 3 csv file from the tables 'general bill', 'expenses', 'total'
 * If you want to create a CSV file for only a specific day add the date in a format " %Y-%m-%d ". 
+
+finally 
+
+Huge thanks to David J. Malan and team for making this awsome courses 
