@@ -112,6 +112,8 @@ def print_help(): # python project.py help
         this command will create a 3 csv file from the tables 'general bill', 'expenses', 'total'
          * if you want to create a csv file for only a specefique day add the date in a fromat " %Y-%m-%d ". 
 
+     -*- to create a pdf file for the last bill use " python project.py save_to_pdf "
+        this command will create bill in a pdf file using the data from the last bill 
      '''
     return help_string
 
