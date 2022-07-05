@@ -46,7 +46,7 @@ def print_total_jr(day = None): # python project.py print_total_jr day
 def save_to_csv(day = None): #python project.py save_to_csv
     db.save_to_csv(day)
 
-def save_to_pdf(): #python project.py save_to_pdf
+def save_to_pdf(): # python project.py create_pdf_bill
     db.save_the_last_bill_to_html_pdf()
     
 
@@ -112,8 +112,7 @@ def print_help(): # python project.py help
         this command will create a 3 csv file from the tables 'general bill', 'expenses', 'total'
          * if you want to create a csv file for only a specefique day add the date in a fromat " %Y-%m-%d ". 
 
-     -*- to create a pdf file for the last bill use " python project.py save_to_pdf "
-        this command will create bill in a pdf file using the data from the last bill 
+     
      '''
     return help_string
 
