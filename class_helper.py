@@ -549,10 +549,10 @@ class Crud_db:
     def print_last_expences(self, id = None):
         self.connect()
         if id == None:
-            query_expences = ''' SELECT * FROM expences WHERE id = (SELECT MAX(id) FROM expences)'''
+            query_expences = ''' SELECT * FROM expenses WHERE id = (SELECT MAX(id) FROM expenses)'''
             self.cursor.execute(query_expences)
         else :
-            query_expences = ''' SELECT * FROM expences WHERE id = ?'''
+            query_expences = ''' SELECT * FROM expenses WHERE id = ?'''
             data_id = (id,)
             self.cursor.execute(query_expences, data_id)
         headers_expences = ['id', 'type', 'name', 'montant', 'date','time']
@@ -565,7 +565,7 @@ class Crud_db:
         else:
             the_date = input('please entre your date in a format " %Y-%m-%d ": ')
         self.connect()
-        query_expences = ''' SELECT * FROM expences WHERE date = ?'''
+        query_expences = ''' SELECT * FROM expenses WHERE date = ?'''
         data_date = (the_date,)
         self.cursor.execute(query_expences, data_date)
         result = self.cursor.fetchall() 
@@ -692,6 +692,8 @@ db = Crud_db()
 
 # db.print_product_table()
 # db.print_the_last_bill()
+# db.print_last_expences()
+# db.print_total_jr()
 
 # def from_csv_to_table(filename):
 #     #header = []

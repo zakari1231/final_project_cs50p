@@ -4,6 +4,41 @@
 
 This is a Seller Management Systeme that contains many features that allow the seller track his revenue and expenses And register his products with the price and the margin, and register all of this information in a database that  Allow to Create Read Update Delete all the information to manage his selling and expense.
 
+## Project Features
+
+* in this project we create a class that deal with all the thing nessecairy to make a CRUD application(Create, Read, Update and Delete), 
+
+it initially create a database in a sqlite and have a methode to connect to that database and to execute query, 
+we create all the table nessecaery for this project using sql query for exemple:
+```
+''' CREATE TABLE IF NOT EXISTS users(
+            id INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL,
+            username VARCHAR NOT NULL, 
+            password VARCHAR NOT NULL,
+            type_user VARCHAR) '''
+```
+this query create a table for the users, with taht every user have an id, username, password and the type of user
+
+# Products
+
+* after adding somme products you can see them in a form of a table in terminal window like this 
+![Products](/screenshots/1.png) 
+
+# bill
+
+adding a bill is very easy all you have to to is enter the client name and the product he buy and the number of that product and after that the class print the bill in form of 2 table in the terminal window like this 
+![bill](/screenshots/2.png)
+
+# expences
+
+any selling management system must have a way to enter the income and the expences and like the bill whene you enter the expences you can see it in a form of table in terminal window like this 
+![expences](/screenshots/3.png)
+
+# total 
+after adding an expences or a bill the program calculat automattcly the total expences and the total income and the total diffrences and the total number of productes and of corse print them in a form of table like this 
+![total](/screenshots/4.png)
+
+
 #### `python project.py help`
 To get help with this project you just type help, that will show you all the command line allowed in this project.
 
