@@ -688,7 +688,7 @@ db = Crud_db()
 # db.update_bill()
 
 # db.save_to_csv()
-db.save_the_last_bill_to_html_pdf()
+# db.save_the_last_bill_to_html_pdf()
 
 # db.print_product_table()
 # db.print_the_last_bill()
