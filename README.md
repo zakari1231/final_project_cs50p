@@ -22,6 +22,7 @@ this query create a table for the users, with taht every user have an id, userna
 # Products
 
 * after adding somme products you can see them in a form of a table in terminal window like this 
+
 ![Products](/screenshots/1.png) 
 
 # bill
