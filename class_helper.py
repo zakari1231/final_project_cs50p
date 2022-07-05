@@ -12,7 +12,6 @@ import getpass
 from tabulate import tabulate
 from jinja2 import Environment, FileSystemLoader
 
-import os
 
 # os.add_dll_directory(r"C:\Program Files\GTK3-Runtime Win64\bin")
 # import os

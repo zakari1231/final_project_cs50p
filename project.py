@@ -1,6 +1,6 @@
 import sys
 
-from attr import s
+# from attr import s
 from class_helper import Crud_db
 
 db = Crud_db()

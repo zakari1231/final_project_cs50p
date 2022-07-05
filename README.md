@@ -47,6 +47,14 @@ any selling management system must have a way to enter the income and the expenc
 after adding an expences or a bill the program calculat automattcly the total expences and the total income and the total diffrences and the total number of productes and of corse print them in a form of table like this 
 ![total](/screenshots/4.png)
 
+## save your daily report as a csv file
+you can save 3 csv file of the income and expences and the total of any day and every day registered in the database
+
+## save the last bill to a pdf file
+you can also save the last bill to a pdf file like this 
+![save the last bill to a pdf file](/screenshots/5.png)
+
+to run th
 
 #### `python project.py help`
 To get help with this project you just type help, that will show you all the command line allowed in this project.
