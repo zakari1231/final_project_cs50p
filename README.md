@@ -110,6 +110,8 @@ This command will create a pdf file and an html file for the last bill you creat
 this command will create a 3 csv file from the tables 'general bill', 'expenses', 'total'
 * If you want to create a CSV file for only a specific day add the date in a format " %Y-%m-%d ". 
 
-finally 
 
-Huge thanks to David J. Malan and team for making this awsome courses 
+# Finally
+
+Thanks for all people make CS50’s Introduction to Programming with Python possible. Especially, David J. Malan and team for making this awsome courses 
+
