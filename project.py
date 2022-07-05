@@ -45,6 +45,9 @@ def print_total_jr(day = None): # python project.py print_total_jr day
 
 def save_to_csv(day = None): #python project.py save_to_csv
     db.save_to_csv(day)
+
+def save_to_pdf(): #python project.py save_to_pdf
+    db.save_the_last_bill_to_html_pdf()
     
 
 
