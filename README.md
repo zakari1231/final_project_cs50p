@@ -11,6 +11,7 @@ This is a Seller Management Systeme that contains many features that allow the s
 we use a few laberey in this project that help facilite and not reenvente the weell like:
 - `sqlite3` allows accessing the database using a nonstandard variant of the SQL query language.
 - `datetime` that help get the date and time in any format we want and also make it easy to handel the manipulation in time or date.
+- `panda` that help transform a sql query to a csv file in more effecent an easy way 
 - `getpass` labreery that help to hide the passwrod whene the user want to login or sginup.
 - `werkzeug` labrery that help encrypte the password.
 - `jinja2` that helpt create html pages and `weasyprint` convert that html page into pdf file.
