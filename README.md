@@ -2,58 +2,50 @@
 #### Video Demo:  <URL HERE>
 #### Description:
 
-this is a Seller Management Systeme that contain many feateres that allow the seller track his revenue and expenses 
-and register his products with the price and the margin, and register all of this informations in a database that 
-allow to Create Read Update Delete all the information to manage his selling and expense.
+This is a Seller Management Systeme that contains many features that allow the seller track his revenue and expenses And register his products with the price and the margin, and register all of this information in a database that  Allow to Create Read Update Delete all the information to manage his selling and expense.
 
 #### `python project.py help`
-to get help with this project you just type help, that will show you all the command line allwoed in this project.
+To get help with this project you just type help, that will show you all the command line allowed in this project.
 
 #### `python project.py sginup` 
-to crate a new user with a username and password, a password that is hashed that no one can use your password even if he have acces to the database.
+To create a new user with a username and password, a password that is hashed that no one can use your password even if he have access to the database.
 
-#### if you have an account use the following "python project.py login"
-    to login to your account and register every transaction with your username, it make you login for 3 hours and automaticlly logout.
+#### `python project.py login`
+To login to your account and register every transaction with your username, it makes you login for 3 hours and automatically logout.
 
-#### if you have an account use the following "python project.py logout"
-    to logout.
+#### `python project.py logout`
+to logout.
 
-#### to create all table in the database use "python project.py create_tables"
-    this commande create all the nesessairy table in the database.
+#### `python project.py create_tables`
+this command creates all the necessary table in the database.
 
-#### to add new products in the database use "python project.py add_products"
-    this commande will add a product name and the price , the margin of this products and if you want you can add a
-        descreption for this prodcuts 
+#### `python project.py add_products`
+this command will add a product name and the price, the margin of this product and if you want, you can add a description for this product 
 
-#### to create new bill for a client use "python project.py create_new_bill"
-    this command will create a new bill fro a client all you have to do is to enter the name of the client 
-        and the id of the product he buy the number of this product, after that if he buy other product just type yes and
-        continue entering what he buy.
+#### `python project.py create_new_bill`
+This command will create a new bill for a client all you have to do is to enter the name of the client and the id of the product he buys the number of his products, after that if he buys another product just type yes and continue entering what he buy.
 
-#### to update a bill use "python project.py update_bill"
-    after choosing the bill that you want to update re enter the new products and the bill will be updated 
+#### `python project.py update_bill`
+after choosing the bill that you want to update re enter the new products and the bill will be updated 
     
-#### to delete a bill use "python project.py delete_bill"
-    this commande will delete the bill from the general bill and detail bill tables
+#### `python project.py delete_bill`
+this command will delete the bill from the general bill and detail bill tables
 
-#### to add a new expences use "python project.py add_expence"
-    this commande will add a new expence to the database you can add the type of the expences and if it is for somme
-        one you can add his name and the ammount of this expenece
+#### `python project.py add_expence`
+this command will add a new experience to the database you can add the type of the experiences and if it is for some one you can add his name and the amount of this expense
 
-#### to update an expences use " python project update_expenses"
-    after choosing the expences that you want to update re enter the data that will be updated 
+#### ` python project update_expenses`
+after choosing the expenses that you want to update reenter the data that will be updated 
     
-#### to delete a expences use "python project.py delete_expenses"
-    this commande will delete the expenses from expnences tables
+#### `python project.py delete_expenses`
+this command will delete the expenses from expenses tables
 
-#### to print the total revenue and expences use " python project.py print_total_jr"
-    this commande will print a table in the terminal window with the total revenue and total expences and the 
-        deferance, if you want to print a total table for a specefec date add the day in a format "%Y-%m-%d" after 
-        "python project.py print_total_jr"
+#### `python project.py print_total_jr`
+this command will print a table in the terminal window with the total revenue and total expenses and the  difference, if you want to print a total table for a specific date, add the day in a format "%Y-%m-%d" after "python project.py print_total_jr"
 
-#### to create a pdf bill for this client use " python project.py create_pdf_bill"
-    this command will create a pdf file and an html file for the last bill you created. 
+#### `python project.py create_pdf_bill`
+This command will create a pdf file and an html file for the last bill you created. 
 
-#### to create a csv file use " python project.py save_to_csv "
-    this command will create a 3 csv file from the tables 'general bill', 'expenses', 'total'
-         * if you want to create a csv file for only a specefique day add the date in a fromat " %Y-%m-%d ". 
+#### ` python project.py save_to_csv `
+this command will create a 3 csv file from the tables 'general bill', 'expenses', 'total'
+* If you want to create a CSV file for only a specific day add the date in a format " %Y-%m-%d ". 
