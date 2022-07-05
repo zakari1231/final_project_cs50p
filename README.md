@@ -7,11 +7,10 @@ and register his products with the price and the margin, and register all of thi
 allow to Create Read Update Delete all the information to manage his selling and expense.
 
 #### `python project.py help`
-to get help with this project you just type help like this that will show you all the command line allwoed in this project.
+to get help with this project you just type help, that will show you all the command line allwoed in this project.
 
-#### to create a user use the following "python project.py sginup"
-    to crate a new user with a username and password, a password that is hashed that no one kan use your password
-        even if he have acces to the database.
+#### `python project.py sginup` 
+to crate a new user with a username and password, a password that is hashed that no one can use your password even if he have acces to the database.
 
 #### if you have an account use the following "python project.py login"
     to login to your account and register every transaction with your username, it make you login for 3 hours and automaticlly logout.
