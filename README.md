@@ -6,19 +6,19 @@ This is a Seller Management Systeme that contains many features that allow the s
 
 # Project Features
 
-* in this project we create a class that deal with all the thing nessecairy to make a CRUD application(Create, Read, Update and Delete), 
+* in this project we create a class that deals with all the thing necessary to make a CRUD application (Create, Read, Update and Delete), 
 
-we use a few laberey in this project that help facilite and not reenvente the weell like:
-- `sqlite3` allows accessing the database using a nonstandard variant of the SQL query language.
-- `datetime` that help get the date and time in any format we want and also make it easy to handel the manipulation in time or date.
-- `panda` that help transform a sql query to a csv file in more effecent an easy way 
-- `getpass` labreery that help to hide the passwrod whene the user want to login or sginup.
-- `werkzeug` labrery that help encrypte the password.
-- `jinja2` that helpt create html pages and `weasyprint` convert that html page into pdf file.
+we use a few libraries in this project that help facilities and not reinventing the Wheel in a manner of speaking like:
+- `sqlite3` Allows accessing the database using a nonstandard variant of the SQL query language.
+- `datetime` That helps get the date and time in any format we want and also make it easy to handle the manipulation in time or date.
+- `panda` That helps transform a SQL query to a CSV file in more efficient an easy way. 
+- `getpass` A library that helps to hide the password when the user want to login or sginup.
+- `werkzeug` A library that helps encrypt the password.
+- `jinja2` that helpe create html pages and `weasyprint` To convert that html page into a pdf file.
 - `tabulate` that print tables 
 
-this class initially create a database in a sqlite and have a methode to connect to that database and to execute query, 
-we create all the table nessecaery for this project using sql query for exemple:
+This class initially creates a database in a cyclist and have a method to connect to that database and to execute query, 
+We create all the table necessary for this project using SQL query for example:
 ```
 ''' CREATE TABLE IF NOT EXISTS users(
             id INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL,
@@ -26,30 +26,30 @@ we create all the table nessecaery for this project using sql query for exemple:
             password VARCHAR NOT NULL,
             type_user VARCHAR) '''
 ```
-this query create a table for the users, with taht every user have an id, username, password and the type of user
+this query creates a table for the users, with that every user has an id, username, password and the type of user
 
 ## Products
 
-after adding somme products you can see them in a form of a table in terminal window like this.
+After adding some products you can see them in a form of a table in a terminal window like this.
 
 ![Products](/screenshots/1.png) 
 
 ## bill
 
-adding a bill is very easy all you have to to is enter the client name and the product he buy and the number of that product and after that the class print the bill in form of 2 table in the terminal window like this 
+adding a bill is very easy all you have to to is enter the client name and the product he buys and the amount of that product and after that the class print the bill in the form of 2 tables in the terminal window like this
 ![bill](/screenshots/2.png)
 
 ## expences
 
-any selling management system must have a way to enter the income and the expences and like the bill whene you enter the expences you can see it in a form of table in terminal window like this 
+any selling management system must have a way to enter the income and the expenses and like the bill when you enter the expenses you can see it in a form of table in the terminal window like this 
 ![expences](/screenshots/3.png)
 
 ## total 
-after adding an expences or a bill the program calculat automattcly the total expences and the total income and the total diffrences and the total number of productes and of corse print them in a form of table like this 
+after adding an expense or a bill the program calculates automatically the total expenses and the total income and the total differences and the total number of products and of course print them in a form of a table like this 
 ![total](/screenshots/4.png)
 
 ## save your daily report as a csv file
-you can save 3 csv file of the income and expences and the total of any day and every day registered in the database
+you can save 3 CSV files of the income and expenses and the total of any day and every day registered in the database
 
 ## save the last bill to a pdf file
 you can also save the last bill to a pdf file like this 
@@ -57,7 +57,7 @@ you can also save the last bill to a pdf file like this
 
 # how to use this project
 
-to run this project first you need to install all the requirements using 
+to run this project, first you need to install all the requirements using 
 ```
 pip install -r requirements.txt
 ```
@@ -113,5 +113,5 @@ this command will create a 3 csv file from the tables 'general bill', 'expenses'
 
 # Finally
 
-Thanks for all people make CS50’s Introduction to Programming with Python possible. Especially, David J. Malan and team for making this awsome courses 
+Thanks for all people make CS50’s Introduction to Programming with Python possible. Especially, David J. Malan and his team for making this awesome course 
 
