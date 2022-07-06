@@ -16,6 +16,8 @@ db = Crud_db()
 
 def test_convert_date_format():
     assert convert_date_format('10-10-2022') =='2022-10-10'
+    assert convert_date_format('09-25-2003') == '2003-09-25'
+    assert convert_date_format('05-05-1989') == '1989-05-05'
 
 
 
