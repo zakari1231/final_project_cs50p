@@ -1,4 +1,7 @@
 import sys
+import time, datetime
+from datetime import timedelta
+import pandas as pd
 
 # from attr import s
 from class_helper import Crud_db
@@ -112,7 +115,8 @@ def save_to_pdf(): # python project.py create_pdf_bill
     db.save_the_last_bill_to_html_pdf()
 
 def convert_date_format(date):
-    new_date = str(date.strftime("%Y-%m-%d"))
+    the_date = pd.to_datetime(date)
+    new_date = the_date.strftime("%Y-%m-%d")
     return new_date
     ...
     

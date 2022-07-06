@@ -7,11 +7,19 @@ from pathlib import Path
 import os
 
 from class_helper import Crud_db
+from project import convert_date_format
 
 
 db = Crud_db() 
 
+# test project
 
+def test_convert_date_format():
+    assert convert_date_format('10-10-2022') =='2022-10-10'
+
+
+
+# test class helper
 
 def test_tables():
     db.connect()
@@ -36,13 +44,13 @@ def test_login_logout():
     else:
         assert db.check_if_login() == True
 
-def check_if_pdf_file():
-    savepdf = db.save_the_last_bill_to_html_pdf()
-    # savepdf
-    filename = Path('weasyprint_pdf_report.pdf')
-    # os.path.exists(filename)    
-    assert os.path.exists(filename) == True
-    assert savepdf == 'pdf file and html file created successfully'
+# def check_if_pdf_file():
+#     savepdf = db.save_the_last_bill_to_html_pdf()
+#     # savepdf
+#     filename = Path('weasyprint_pdf_report.pdf')
+#     # os.path.exists(filename)    
+#     assert os.path.exists(filename) == True
+#     assert savepdf == 'pdf file and html file created successfully'
 
 # def check_if_file_created():
 #     assert db.save_the_last_bill_to_html_pdf() == 1
@@ -56,7 +64,7 @@ def check_if_pdf_file():
 
 
 
-check_if_pdf_file()
+# check_if_pdf_file()
 # #using pathlib
 # from pathlib import Path
 
