@@ -47,13 +47,15 @@ def main():
             if sys.argv[2]==None or sys.argv[2]=='':
                 print_total_jr()
             if sys.argv[2]:
-                print_total_jr(sys.argv[2])
+                the_date = convert_date_format(sys.argv[2])
+                print_total_jr(the_date)
 
         elif sys.argv[1]== 'save_to_csv':
             if sys.argv[2]==None or sys.argv[2]=='':
                 save_to_csv()
             if sys.argv[2]:
-                save_to_csv(sys.argv[2])
+                the_date = convert_date_format(sys.argv[2])
+                save_to_csv(the_date)
         
         elif sys.argv[1]=='create_pdf_bill':
             save_to_pdf()
@@ -108,6 +110,11 @@ def save_to_csv(day = None): #python project.py save_to_csv day
 
 def save_to_pdf(): # python project.py create_pdf_bill
     db.save_the_last_bill_to_html_pdf()
+
+def convert_date_format(date):
+    new_date = str(date.strftime("%Y-%m-%d"))
+    return new_date
+    ...
     
 
 
