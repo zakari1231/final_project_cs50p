@@ -1,4 +1,5 @@
 import pytest
+import sys
 import sqlite3
 import time, datetime
 from datetime import timedelta
@@ -20,8 +21,14 @@ def test_convert_date_format():
     assert convert_date_format('05-05-1989') == '1989-05-05'
 
 
+def test_main(capsys):
 
-# test class helper
+    from project import main
+    sys.argv = ['h', 'H', 'help']
+    main()
+    out, err = capsys.readouterr()
+    assert out.startswith(" \n    this is a Seller Management Systeme") is True
+    
 
 def test_tables():
     db.connect()
