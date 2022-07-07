@@ -118,7 +118,7 @@ def convert_date_format(date):
     the_date = pd.to_datetime(date)
     new_date = the_date.strftime("%Y-%m-%d")
     return new_date
-    ...
+    
     
 
 
