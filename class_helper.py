@@ -340,7 +340,7 @@ class Crud_db:
         data_query_2 = (date_f,date_f,date_f, date_f,date_f, date_f)
         self.cursor.execute(query_2, data_query_2)
         self.close()
-        self.print_total_jr()
+        # self.print_total_jr()
 
     def add_product(self):
         self.connect()
