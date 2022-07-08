@@ -27,7 +27,7 @@ def test_main(capsys):
     sys.argv = ['h', 'H', 'help']
     main()
     out, err = capsys.readouterr()
-    assert out.startswith(" \n    this is a Seller Management Systeme") is True
+    assert out.startswith(" \n    This is a Seller Management Systeme that cont") is True
     
 
 def test_tables():
