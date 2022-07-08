@@ -48,14 +48,13 @@ def main():
             if len(sys.argv)==2:
                 print_total_jr()
             elif len(sys.argv)==3:
-                # the_date = convert_date_format(sys.argv[2])
                 print_total_jr(sys.argv[2])
 
 
         elif sys.argv[1]== 'save_to_csv':
-            if sys.argv[2]==None or sys.argv[2]=='':
-                save_to_csv()
-            if sys.argv[2]:
+            if len(sys.argv)==2:
+                save_to_csv()   
+            elif len(sys.argv)==3:
                 the_date = convert_date_format(sys.argv[2])
                 save_to_csv(the_date)
         
