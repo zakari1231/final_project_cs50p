@@ -10,9 +10,7 @@ db = Crud_db()
 
 def main():
     # print(print_help())
-    if len(sys.argv) == 1:
-        print(print_help())
-    elif len(sys.argv) == 2 or len(sys.argv) == 3:
+    if len(sys.argv) == 2 or len(sys.argv) == 3:
         if sys.argv[1] == 'help' or sys.argv[1] == 'h' or sys.argv[1] == 'H':
             print(print_help())
 
@@ -65,7 +63,8 @@ def main():
         
         else:
             print(print_help())
-            
+    elif len(sys.argv) == 1:
+        print(print_help())   
     else:
         print('no such command arguments try python project.py help')
         # print(print_help())
