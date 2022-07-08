@@ -22,7 +22,7 @@ def main():
         elif sys.argv[1]=='login':
             login()
 
-        elif sys.argv[1]=='lgout':
+        elif sys.argv[1]=='logout':
             logout()
 
         elif sys.argv[1]=='add_products':
