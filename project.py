@@ -45,11 +45,12 @@ def main():
             delete_expenses()
 
         elif sys.argv[1]=='print_total_jr':
-            if sys.argv[2]==None or sys.argv[2]=='':
+            if len(sys.argv)==2:
                 print_total_jr()
-            if sys.argv[2]:
-                the_date = convert_date_format(sys.argv[2])
-                print_total_jr(the_date)
+            elif len(sys.argv)==3:
+                # the_date = convert_date_format(sys.argv[2])
+                print_total_jr(sys.argv[2])
+
 
         elif sys.argv[1]== 'save_to_csv':
             if sys.argv[2]==None or sys.argv[2]=='':
@@ -171,9 +172,8 @@ def print_help(): # python project.py help
         this commande will delete the expenses from expnences tables
 
      -*- to print the total revenue and expences use " python project.py print_total_jr"
-        this commande will print a table in the terminal window with the total revenue and total expences and the 
-        deferance, if you want to print a total table for a specefec date add the day in a format "%Y-%m-%d" after 
-        "python project.py print_total_jr"
+        this command will print a table in the terminal window with the total revenue and total expenses and the  difference,
+        if you want to print the hole table add 'all' to like this  "python project.py print_total_jr all"
 
      -*- to create a pdf bill for this client use " python project.py create_pdf_bill"
         this command will create a pdf file and an html file for the last bill you created. 

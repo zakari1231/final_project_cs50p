@@ -101,7 +101,7 @@ after choosing the expenses that you want to update reenter the data that will b
 this command will delete the expenses from expenses tables
 
 #### `python project.py print_total_jr`
-this command will print a table in the terminal window with the total revenue and total expenses and the  difference, if you want to print a total table for a specific date, add the day in a format "%Y-%m-%d" after "python project.py print_total_jr"
+this command will print a table in the terminal window with the total revenue and total expenses and the  difference, if you want to print the hole table add 'all' to like this  "python project.py print_total_jr all"
 
 #### `python project.py create_pdf_bill`
 This command will create a pdf file and an html file for the last bill you created. 

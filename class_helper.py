@@ -692,7 +692,7 @@ db = Crud_db()
 # db.print_product_table()
 # db.print_the_last_bill()
 # db.print_last_expences()
-# db.print_total_jr()
+# db.print_total_jr('all')
 
 # def from_csv_to_table(filename):
 #     #header = []
