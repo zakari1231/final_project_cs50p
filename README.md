@@ -1,11 +1,6 @@
 # selling management system
 #### Video Demo:  
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=nTQUwghvy5Q" target="_blank">
- <img src="http://img.youtube.com/vi/nTQUwghvy5Q/mqdefault.jpg" alt="Watch the video" width="240" height="180" border="10" />
-</a>
-<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/5IyFgu6zvdM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-
-<!-- [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/5IyFgu6zvdM/0.jpg)](https://www.youtube.com/watch?v=5IyFgu6zvdM) -->
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/5IyFgu6zvdM/0.jpg)](https://www.youtube.com/watch?v=5IyFgu6zvdM)
 <!-- <URL HERE> -->
 #### Description:
 
