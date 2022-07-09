@@ -670,36 +670,3 @@ class Crud_db:
 
 
 
-
-db = Crud_db()
-
-# db.create_tables()
-# check_if_user_login(db.check_if_login(), db.login())
-#db.chek_if_table_there()
-# db.insert_new_bill()
-# db.add_expenses()
-# db.signup()
-# db.login()
-# db.logout()
-# db.check_if_login()
-# db.add_product()
-# db.calculat_total()
-# db.update_bill()
-
-# db.save_to_csv()
-# db.save_the_last_bill_to_html_pdf()
-
-# db.print_product_table()
-# db.print_the_last_bill()
-# db.print_last_expences()
-# db.print_total_jr('all')
-
-# def from_csv_to_table(filename):
-#     #header = []
-#     table = []
-#     with open(filename) as file:
-#         reader = csv.reader(file)
-#         header =next(reader)
-#         for row in reader:
-#             table.append(row)
-#     return (tabulate(table, header, tablefmt="grid"))
