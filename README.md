@@ -1,5 +1,6 @@
 # selling management system
-#### Video Demo:  <URL HERE>
+#### Video Demo:  [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/5IyFgu6zvdM/0.jpg)](https://www.youtube.com/watch?v=5IyFgu6zvdM)
+<!-- <URL HERE> -->
 #### Description:
 
 This is a Seller Management Systeme that contains many features that allow the seller track his revenue and expenses And register his products with the price and the margin, and register all of this information in a database that  Allow to Create Read Update Delete all the information to manage his selling and expense.
